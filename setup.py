@@ -7,7 +7,6 @@ from setuptools import setup, find_packages
 
 
 setup(name="ls.sampleproject",
-      version="0.1.0",
       use_scm_version={
           'write_to':  "ls/sampleproject/_version.py",
       },
@@ -34,9 +33,10 @@ setup(name="ls.sampleproject",
       install_requires=["inflect"],
       tests_require=["coverage"],
       #include_package_data=True,
-      package_data={
-          '': "data/data_file",
-      },
+      #package_data={},
+      data_files=[
+          ('my_data', ['data/data_file']),
+      ],
       test_suite="ls.sampleproject.tests",
       zip_safe=False,
      )

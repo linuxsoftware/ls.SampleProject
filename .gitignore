@@ -23,6 +23,7 @@ __pycache__/
 build/
 data/
 dist/
+_version.py
 local.py
 password.py
 scratch/

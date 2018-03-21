@@ -16,8 +16,7 @@
 .coverage
 .tox
 .webassets-cache
-/cms/media/
-/cms/static/
+/.eggs/
 /htmlcov/
 /node_modules/
 __pycache__/

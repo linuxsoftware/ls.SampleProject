@@ -5,10 +5,15 @@
 import codecs
 from setuptools import setup, find_packages
 
+
 setup(name="ls.sampleproject",
       version="0.1.0",
+      use_scm_version={
+          'write_to':  "ls/sampleproject/_version.py",
+      },
       description="Prints 6x6 Sator Squares",
       long_description=codecs.open("README.rst", encoding="utf-8").read(),
+      long_description_content_type='text/x-rst',
       keywords=["sator", "rotas"],
       classifiers=["Intended Audience :: Developers",
                    "License :: OSI Approved :: MIT License",
@@ -17,15 +22,22 @@ setup(name="ls.sampleproject",
                    "Topic :: Software Development :: Libraries :: Python Modules"
                   ],
       platforms="any",
-      author="David Moore",
+      author="Dave Moore",
       author_email="dave@linuxsoftware.nz",
       url="https://github.com/linuxsoftware/ls.sampleproject",
+      project_urls={
+          'Source': "https://github.com/linuxsoftware/ls.sampleproject/",
+          'Tracker': "https://github.com/linuxsoftware/ls.sampleproject/issues",
+      },
       license="MIT",
+      packages=find_packages(where=".", exclude=["ls.sampleproject.tests"]),
+      setup_requires=["setuptools_scm"],
       install_requires=["inflect"],
-      test_requires=["coverage"],
-      packages=find_packages(),
-      include_package_data=True,
-      namespace_packages=["ls"],
+      tests_require=["coverage"],
+      #include_package_data=True,
+      package_data={
+          '': "data/data_file",
+      },
       test_suite="ls.sampleproject.tests",
-      zip_save=False,
+      zip_safe=False,
      )

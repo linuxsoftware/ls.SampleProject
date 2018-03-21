@@ -1,2 +1,7 @@
-include *.rst *.txt LICENSE
+# define the list of files to include in the distribution built by the sdist command
+
+include README.rst LICENSE NEWS
+include data/data_file
 recursive-include ls *.py
+global-exclude __pycache__
+global-exclude *.py[cod]

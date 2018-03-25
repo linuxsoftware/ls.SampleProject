@@ -23,7 +23,6 @@ setup(name="ls.sampleproject",
       author="Dave Moore",
       author_email="dave@linuxsoftware.nz",
       url="https://github.com/linuxsoftware/ls.sampleproject",
-      download_url="https://github.com/linuxsoftware/ls.sampleproject/archive/0.3.8.tar.gz",
       project_urls={
           'Source': "https://github.com/linuxsoftware/ls.sampleproject/",
           'Tracker': "https://github.com/linuxsoftware/ls.sampleproject/issues",

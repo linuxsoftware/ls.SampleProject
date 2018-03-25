@@ -1,6 +1,6 @@
-
+# ----------------------
 #  ls.sampleproject
-#  -----------
+# ----------------------
 
 import codecs
 from setuptools import setup, find_packages
@@ -20,13 +20,9 @@ setup(name="ls.sampleproject",
                    "Topic :: Software Development :: Libraries :: Python Modules"
                   ],
       platforms="any",
-      author="Dave Moore",
-      author_email="dave@linuxsoftware.nz",
+      author="David Moore",
+      author_email="david@linuxsoftware.co.nz",
       url="https://github.com/linuxsoftware/ls.sampleproject",
-      project_urls={
-          'Source': "https://github.com/linuxsoftware/ls.sampleproject/",
-          'Tracker': "https://github.com/linuxsoftware/ls.sampleproject/issues",
-      },
       license="MIT",
       packages=find_packages(where=".", exclude=["ls.sampleproject.tests"]),
       setup_requires=["setuptools_scm"],

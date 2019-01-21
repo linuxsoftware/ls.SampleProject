@@ -1,1 +1,6 @@
+# https://github.com/linuxsoftware/ls.sampleproject
+
 language: python
+
+script:
+  - ./runtests.sh

@@ -10,15 +10,20 @@ env:
 python:
   - "3.5"
   - "3.6"
-  - "3.7"
+  - "3.7-dev"
+
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: required
 
 install:
   - pip install -r requirements.txt
-  - pip install wagtail=$WAGTAIL_VERSION
+  - pip install wagtail==$WAGTAIL_VERSION
 
 script:
-  - ./runtests.py
+  - ./runtests.py --coverage
 
 after_success:
-  - ./runtests.py --coverage
   - coveralls

@@ -1,6 +1,11 @@
 ls.sampleproject
 =================
 
+.. image:: https://secure.travis-ci.org/linuxsoftware/ls.sampleproject.svg?branch=master
+   :target: https://travis-ci.org/linuxsoftware/ls.sampleproject
+.. image:: https://coveralls.io/repos/linuxsoftware/ls.sampleproject/badge.svg?branch=master
+   :target: https://coveralls.io/r/linuxsoftware/ls.sampleproject
+
 This is the README file for the project.
 
 The file should use UTF-8 encoding and be written using `reStructuredText

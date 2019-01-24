@@ -4,39 +4,17 @@
 
 import os
 import io
+from pathlib import Path
 from setuptools import setup, find_packages
 
 
 # allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+here = Path(__file__).resolve().parent
+os.chdir(str(here))
 
 with io.open("README.rst", encoding="utf-8") as readme:
     README = readme.read()
 
-# Package dependencies
-install_requires = [
-    "inflect",
-]
-
-# Testing dependencies
-testing_extras = [
-    # Required for running the tests
-    "tox>=2.3.1,<2.4",
-
-    # For coverage and PEP8 linting
-    "coverage>=4.1.0,<4.2",
-    "flake8>=3.2.0,<3.3",
-    "flake8-colors>=0.1.6,<1",
-    "isort==4.2.5",
-
-    # For test site
-    "Django==2.0.5",
-    "wagtail==2.1",
-]
-
-# Documentation dependencies
-documentation_extras = [
-]
 
 setup(name="ls.sampleproject",
       use_scm_version={
@@ -57,15 +35,10 @@ setup(name="ls.sampleproject",
       license="MIT",
       packages=find_packages(where=".", exclude=["ls.sampleproject.tests"]),
       setup_requires=["setuptools_scm"],
-      install_requires=install_requires,
-      extras_require={'testing':   testing_extras,
-                      'docs':      documentation_extras, },
-      tests_require=testing_extras,
-      #include_package_data=True,
-      #package_data={},
+      install_requires=["inflect"],
+      tests_require=["coverage"],
       data_files=[
           ('my_data', ['data/data_file']),
       ],
-      # test_suite="ls.sampleproject.tests",
-      # zip_safe=False,
+      test_suite="ls.sampleproject.tests",
      )
